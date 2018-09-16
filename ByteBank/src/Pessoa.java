@@ -2,6 +2,7 @@
     
      String nome;
      String endereco;
+     String rendaAtual;
 
     public String getNome() {
         return nome;
