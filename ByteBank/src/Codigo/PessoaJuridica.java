@@ -5,12 +5,15 @@ package Codigo;
 
 public class PessoaJuridica extends Pessoa {
     
-    String CNPJ;
-    String razaoSocial;
+    private static int idClientePJ = 0;
+    private String CNPJ;
+    private String razaoSocial;
+    
     
     public PessoaJuridica(String CNPJ){
         
         this.CNPJ = CNPJ;
+        idClientePJ++;
     }
 
     public String getCNPJ() {
@@ -29,7 +32,9 @@ public class PessoaJuridica extends Pessoa {
         this.razaoSocial = razaoSocial;
     }
     
-    
+     public int getIDCliente(){
+       return idClientePJ;
+   }
     
     
 }
