@@ -7,8 +7,8 @@ import javax.swing.table.AbstractTableModel;
 
 public class PessoaJuridicaTableModel extends AbstractTableModel{
     
-    List<PessoaFisica> dados = new ArrayList <>();
-    String[] colunas = {"ID","Nome", "CPF"};
+    List<PessoaJuridica> dados = new ArrayList <>();
+    String[] colunas = {"ID","Razão Social", "CNPJ", "Inscrição Estadual", "Telefone", "E-mail", "Data do Cadastro"};
 
     @Override
     public String getColumnName(int column) {
@@ -34,18 +34,26 @@ public class PessoaJuridicaTableModel extends AbstractTableModel{
             case 0:
                 return dados.get(linha).getIDCliente();
             case 1:
-                return dados.get(linha).getNome();
+                return dados.get(linha).getRazaoSocial();
             case 2:
-                return dados.get(linha).getCPF();
+                return dados.get(linha).getCNPJ();
+            case 3:
+                return dados.get(linha).getInscricaoEstadual();
+            case 4:
+                return dados.get(linha).getTelefone();
+            case 5:
+                return dados.get(linha).getEmail();
+            case 6:
+                return dados.get(linha).getDataDoCadastro();
              
                 
         }
         return null;
         }
     
-    public void addRow(PessoaFisica PF){
+    public void addRow(PessoaJuridica PJ){
         
-        this.dados.add(PF);
+        this.dados.add(PJ);
         this.fireTableDataChanged();
         
     }
