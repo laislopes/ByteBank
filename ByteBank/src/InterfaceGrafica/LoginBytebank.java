@@ -105,7 +105,7 @@ public class LoginBytebank extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(txtNomeUsuario.getText().equals("usuario")&&txtSenha.getText().equals("1234")){
             
-            JOptionPane.showMessageDialog(null, "Bem-Vindo");
+            new TelaPrincipal().setVisible(true);
         }
         else{
             

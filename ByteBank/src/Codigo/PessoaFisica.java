@@ -1,7 +1,11 @@
+package Codigo;
+
+
 
 public class PessoaFisica extends Pessoa {
     
     String CPF;
+    
     
     public PessoaFisica(String CPF){
         

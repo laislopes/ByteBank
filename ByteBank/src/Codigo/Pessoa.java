@@ -1,8 +1,14 @@
+package Codigo;
+
+
+
  public class Pessoa {
     
      String nome;
      String endereco;
-     String rendaAtual;
+     String telefone;
+     String email;
+     //String rendaAtual;
 
     public String getNome() {
         return nome;
