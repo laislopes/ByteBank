@@ -1,10 +1,13 @@
 package Codigo;
 
+import java.util.ArrayList;
+
 
 
 public class PessoaFisica extends Pessoa {
     
-    private static int idClientePF = 0;
+    private static int id = 0;
+    private ArrayList<Integer> idClientePF;
     private String nome;
     private String CPF;
     private String sexo;
@@ -12,10 +15,11 @@ public class PessoaFisica extends Pessoa {
     
     
     
-    public PessoaFisica(String CPF){
+    public PessoaFisica(String CPF,ArrayList<Integer> idClientePF ){
         
         this.CPF = CPF;
-        idClientePF++;
+        id++;
+        this.idClientePF = idClientePF;
     }
 
     public String getNome() {
@@ -33,9 +37,12 @@ public class PessoaFisica extends Pessoa {
     public void setCPF(String CPF) {
         this.CPF = CPF;
     }
-    
-   public int getIDCliente(){
-       return idClientePF;
+   
+    public void setIDCliente(){
+        idClientePF.add(id);
+   }
+   public int getIDCliente(int linha){
+       return idClientePF.get(linha);
    }
 
     public String getSexo() {

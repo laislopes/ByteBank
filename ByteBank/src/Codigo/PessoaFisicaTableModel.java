@@ -32,7 +32,7 @@ public class PessoaFisicaTableModel extends AbstractTableModel{
         
         switch(coluna){
             case 0:
-                return dados.get(linha).getIDCliente();
+                return dados.get(linha).getIDCliente(linha);
             case 1:
                 return dados.get(linha).getNome();
             case 2:
@@ -55,6 +55,13 @@ public class PessoaFisicaTableModel extends AbstractTableModel{
         
         this.dados.add(PF);
         this.fireTableDataChanged();
+        
+    }
+    
+    public void removeRow(int linha){
+        
+        this.dados.remove(linha);
+        this.fireTableRowsDeleted(linha, linha);
         
     }
     

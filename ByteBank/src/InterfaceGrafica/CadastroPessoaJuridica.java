@@ -4,6 +4,7 @@ package InterfaceGrafica;
 
 
 import Codigo.*;
+import java.util.ArrayList;
 
 public class CadastroPessoaJuridica extends javax.swing.JFrame {
 
@@ -11,7 +12,7 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
     
     
     PessoaJuridicaTableModel tableModel = new PessoaJuridicaTableModel();
-    
+    private ArrayList<Integer> idClientePJ = new ArrayList<> ();
     public CadastroPessoaJuridica() {
         initComponents();
         jTClientes.setModel(tableModel);
@@ -60,6 +61,7 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         txtBairro = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        btnExcluir = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTClientes = new javax.swing.JTable();
@@ -184,6 +186,14 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
 
         jLabel17.setText("Bairro:");
 
+        btnExcluir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -205,7 +215,7 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(txtCEP)
+                                        .addComponent(txtCEP, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                                         .addGap(18, 18, 18))))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,7 +250,9 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -284,7 +296,8 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(2, 2, 2)
@@ -294,7 +307,7 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addComponent(txtSite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Clientes Cadastrados"));
@@ -374,7 +387,7 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
-        PessoaJuridica PJ = new PessoaJuridica(txtCNPJ.getText());
+        PessoaJuridica PJ = new PessoaJuridica(txtCNPJ.getText(),idClientePJ);
 
         PJ.setRazaoSocial(txtRazaoSocial.getText());
         PJ.setDataDoCadastro(txtData.getText());
@@ -389,10 +402,17 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
         PJ.setEmail(txtEmail.getText());
         PJ.setTelefone(txtTelefone.getText());
         PJ.setSite(txtSite.getText());
-        
+        PJ.setIDCliente();
         tableModel.addRow(PJ);
 
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        if(jTClientes.getSelectedRow()!= -1){
+            
+            tableModel.removeRow(jTClientes.getSelectedRow());
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
     
     
     /**
@@ -434,6 +454,7 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
