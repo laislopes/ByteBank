@@ -197,6 +197,8 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="txtCelular" min="-2" pref="216" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="btnSalvar" min="-2" pref="87" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -231,10 +233,12 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="txtUF" alignment="0" pref="57" max="32767" attributes="0"/>
-                                          <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtNumero" alignment="0" pref="57" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="txtUF" alignment="0" pref="57" max="32767" attributes="0"/>
+                                              <Component id="txtNumero" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -258,7 +262,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
@@ -267,8 +271,8 @@
                               </Group>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="txtEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNumero" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtEmailPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNumero" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -314,7 +318,10 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnSalvar" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="btnSalvar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Component id="btnCancelar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -359,11 +366,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="E-mail:"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNumero">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumeroActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
@@ -417,6 +419,24 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="txtNumero">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format format="#####" subtype="-1" type="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnCancelar">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Cancelar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

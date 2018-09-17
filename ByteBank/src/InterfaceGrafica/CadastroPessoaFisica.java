@@ -5,6 +5,7 @@ package InterfaceGrafica;
 
 import Codigo.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class CadastroPessoaFisica extends javax.swing.JFrame {
 
@@ -46,7 +47,6 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txtEmailPF = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtNumero = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         txtCEP = new javax.swing.JFormattedTextField();
@@ -58,6 +58,8 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtBairro = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
+        txtNumero = new javax.swing.JFormattedTextField();
+        btnCancelar = new javax.swing.JButton();
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados Pessoais"));
 
@@ -146,12 +148,6 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
 
         jLabel11.setText("E-mail:");
 
-        txtNumero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumeroActionPerformed(evt);
-            }
-        });
-
         jLabel12.setText("Bairro:");
 
         jLabel13.setText("CEP:");
@@ -181,6 +177,16 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
 
         jLabel16.setText("Número:");
 
+        txtNumero.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#####"))));
+
+        btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -198,6 +204,8 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnCancelar)
+                                .addGap(18, 18, 18)
                                 .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -222,10 +230,11 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtUF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNumero, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txtUF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                                        .addComponent(txtNumero))
+                                    .addComponent(jLabel16))
                                 .addGap(126, 126, 126)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
@@ -241,14 +250,14 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
-                                .addGap(2, 2, 2))
+                                .addGap(6, 6, 6))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel16)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmailPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtEmailPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -282,7 +291,9 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
                         .addContainerGap(30, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
 
@@ -320,7 +331,24 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    private void limpaCampos(){
+        
+        txtCPF.setText("");
+        txtNomePF.setText("");
+        txtData.setText("");
+        txtSexo.setSelectedIndex(0);
+        txtCelular.setText("");
+        txtEndereco.setText("");
+        txtBairro.setText("");
+        txtCidade.setText("");
+        txtNumero.setText("");
+        txtCEP.setText("");
+        txtUF.setText("");
+        txtEmailPF.setText("");
+        txtTelefone.setText("");
+        
+        
+    }
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
         PessoaFisica PF = new PessoaFisica(txtCPF.getText(), idClientePJ);
@@ -339,16 +367,20 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
         PF.setCelular(txtCelular.getText());
         PF.setIDCliente();
         
-           tableModel.addRow(PF);
+        tableModel.addRow(PF);
+        
+        JOptionPane.showMessageDialog(null, "Cliente Cadastrado com Sucesso!");
+        
+        limpaCampos();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void txtCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCEPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCEPActionPerformed
 
-    private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumeroActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        limpaCampos();
+    }//GEN-LAST:event_btnCancelarActionPerformed
     
     
     /**
@@ -388,6 +420,7 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -414,7 +447,7 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmailPF;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNomePF;
-    private javax.swing.JTextField txtNumero;
+    private javax.swing.JFormattedTextField txtNumero;
     private javax.swing.JComboBox<String> txtSexo;
     private javax.swing.JFormattedTextField txtTelefone;
     private javax.swing.JTextField txtUF;

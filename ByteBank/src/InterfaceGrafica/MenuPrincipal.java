@@ -5,8 +5,8 @@
  */
 package InterfaceGrafica;
 
-import Codigo.PessoaFisicaTableModel;
-import Codigo.PessoaJuridicaTableModel;
+
+import Codigo.*;
 
 
 
@@ -27,6 +27,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     
     public MenuPrincipal() {
         initComponents();
+        
     }
 
     /**
@@ -122,7 +123,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPrincipal().setVisible(true);
+                
             }
         });
     }
