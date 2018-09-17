@@ -4,7 +4,10 @@ package InterfaceGrafica;
 
 
 import Codigo.*;
+import java.awt.Component;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 public class CadastroPessoaJuridica extends javax.swing.JFrame {
 
@@ -334,7 +337,24 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
     private void txtCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCEPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCEPActionPerformed
-
+    
+    private void limpaCampos(){
+        
+        txtRazaoSocial.setText("");
+        txtData.setText("");
+        txtNomeFantasia.setText("");
+        txtInscricaoEstadual.setText("");
+        txtEndereco.setText("");
+        txtBairro.setText("");
+        txtCidade.setText("");
+        txtNumero.setText("");
+        txtCEP.setText("");
+        txtUF.setText("");
+        txtEmail.setText("");
+        txtTelefone.setText("");
+        txtSite.setText("");
+        
+    }
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
 
         PessoaJuridica PJ = new PessoaJuridica(txtCNPJ.getText(),idClientePJ);
@@ -354,7 +374,11 @@ public class CadastroPessoaJuridica extends javax.swing.JFrame {
         PJ.setSite(txtSite.getText());
         PJ.setIDCliente();
         tableModel.addRow(PJ);
-
+        
+        JOptionPane.showMessageDialog(null, "Cliente Cadastrado com Sucesso!");
+        
+        limpaCampos();
+                
     }//GEN-LAST:event_btnSalvarActionPerformed
     
     
