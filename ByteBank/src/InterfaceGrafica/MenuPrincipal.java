@@ -19,7 +19,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     PessoaFisicaTableModel tableModelPF = new PessoaFisicaTableModel();
     PessoaJuridicaTableModel tableModelPJ = new PessoaJuridicaTableModel();
     CadastroPessoaFisica cadastroPF = new CadastroPessoaFisica(tableModelPF);
-    CadastroPessoaJuridica cadastroPJ = new CadastroPessoaJuridica();
+    CadastroPessoaJuridica cadastroPJ = new CadastroPessoaJuridica(tableModelPJ);
     ConsultaPessoaFisica consultaPF = new ConsultaPessoaFisica(tableModelPF);
     ConsultaPessoaJuridica consultaPJ = new ConsultaPessoaJuridica(tableModelPJ);
     OpcaoCadastroPFOuPJ opcaoCadastro = new OpcaoCadastroPFOuPJ(cadastroPF, cadastroPJ);
