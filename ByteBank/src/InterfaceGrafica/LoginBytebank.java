@@ -5,10 +5,12 @@ package InterfaceGrafica;
 import javax.swing.JOptionPane;
 
 public class LoginBytebank extends javax.swing.JFrame {
-       
+     
+    
    
     public LoginBytebank() {
         initComponents();
+       
     }
 
     

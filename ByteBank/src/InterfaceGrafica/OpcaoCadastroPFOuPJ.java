@@ -5,6 +5,8 @@
  */
 package InterfaceGrafica;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author danie
@@ -13,10 +15,11 @@ public class OpcaoCadastroPFOuPJ extends javax.swing.JFrame {
 
     CadastroPessoaFisica cadastroPF;
     CadastroPessoaJuridica cadastroPJ;
-    public OpcaoCadastroPFOuPJ(CadastroPessoaFisica cadastroPF,CadastroPessoaJuridica cadastroPJ ) {
+    public OpcaoCadastroPFOuPJ(CadastroPessoaFisica cadastroPF,CadastroPessoaJuridica cadastroPJ) {
         initComponents();
         this.cadastroPF = cadastroPF;
         this.cadastroPJ = cadastroPJ;
+       
     }
 
     /**
