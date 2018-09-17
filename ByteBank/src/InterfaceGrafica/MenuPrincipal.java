@@ -6,6 +6,7 @@
 package InterfaceGrafica;
 
 import Codigo.PessoaFisicaTableModel;
+import Codigo.PessoaJuridicaTableModel;
 
 
 
@@ -15,10 +16,14 @@ import Codigo.PessoaFisicaTableModel;
  */
 public class MenuPrincipal extends javax.swing.JFrame {
     
-    PessoaFisicaTableModel tableModel = new PessoaFisicaTableModel();
-    CadastroPessoaFisica cadastroPF = new CadastroPessoaFisica(tableModel);
+    PessoaFisicaTableModel tableModelPF = new PessoaFisicaTableModel();
+    PessoaJuridicaTableModel tableModelPJ = new PessoaJuridicaTableModel();
+    CadastroPessoaFisica cadastroPF = new CadastroPessoaFisica(tableModelPF);
     CadastroPessoaJuridica cadastroPJ = new CadastroPessoaJuridica();
-    ConsultaCliente consulta = new ConsultaCliente(tableModel);
+    ConsultaPessoaFisica consultaPF = new ConsultaPessoaFisica(tableModelPF);
+    ConsultaPessoaJuridica consultaPJ = new ConsultaPessoaJuridica(tableModelPJ);
+    OpcaoCadastroPFOuPJ opcaoCadastro = new OpcaoCadastroPFOuPJ(cadastroPF, cadastroPJ);
+    OpcaoConsultaPFOuPJ opcaoConsulta = new OpcaoConsultaPFOuPJ(consultaPF,consultaPJ);
     
     public MenuPrincipal() {
         initComponents();
@@ -39,6 +44,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ItemMenuConsultarClientes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jMenu1.setText("Clientes");
 
@@ -74,14 +80,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ItemMenuCadastrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemMenuCadastrarClientesActionPerformed
-        cadastroPF.setVisible(true);
+        opcaoCadastro.setVisible(true);
     }//GEN-LAST:event_ItemMenuCadastrarClientesActionPerformed
 
     private void ItemMenuConsultarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemMenuConsultarClientesActionPerformed
-        consulta.setVisible(true);
+        opcaoConsulta.setVisible(true);
     }//GEN-LAST:event_ItemMenuConsultarClientesActionPerformed
 
     /**

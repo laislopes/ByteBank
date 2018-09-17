@@ -11,10 +11,12 @@ package InterfaceGrafica;
  */
 public class OpcaoConsultaPFOuPJ extends javax.swing.JFrame {
 
-    //CadastroPessoaFisica cadastroPF = new CadastroPessoaFisica();
-    //CadastroPessoaJuridica cadastroPJ = new CadastroPessoaJuridica();
-    public OpcaoConsultaPFOuPJ() {
+    ConsultaPessoaFisica consultaPF;
+    ConsultaPessoaJuridica consultaPJ;
+    public OpcaoConsultaPFOuPJ(ConsultaPessoaFisica consultaPF,ConsultaPessoaJuridica consultaPJ) {
         initComponents();
+        this.consultaPF = consultaPF;
+        this.consultaPJ = consultaPJ;
     }
 
     /**
@@ -26,24 +28,26 @@ public class OpcaoConsultaPFOuPJ extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCadastroPF = new javax.swing.JButton();
-        btnCadastroPJ = new javax.swing.JButton();
+        btnConsultaPF = new javax.swing.JButton();
+        btnConsultaPJ = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        btnCadastroPF.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCadastroPF.setText("Cadastrar Pessoa Física");
-        btnCadastroPF.addActionListener(new java.awt.event.ActionListener() {
+        setResizable(false);
+
+        btnConsultaPF.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnConsultaPF.setText("Consultar Pessoa Física");
+        btnConsultaPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastroPFActionPerformed(evt);
+                btnConsultaPFActionPerformed(evt);
             }
         });
 
-        btnCadastroPJ.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCadastroPJ.setText("Cadastrar Pessoa Jurídica");
-        btnCadastroPJ.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultaPJ.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnConsultaPJ.setText("Consultar Pessoa Jurídica");
+        btnConsultaPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastroPJActionPerformed(evt);
+                btnConsultaPJActionPerformed(evt);
             }
         });
 
@@ -60,9 +64,9 @@ public class OpcaoConsultaPFOuPJ extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnCadastroPF, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                        .addComponent(btnCadastroPJ))
+                        .addComponent(btnConsultaPF, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addComponent(btnConsultaPJ))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -83,8 +87,8 @@ public class OpcaoConsultaPFOuPJ extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastroPF, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCadastroPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnConsultaPF, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConsultaPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -92,13 +96,13 @@ public class OpcaoConsultaPFOuPJ extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCadastroPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroPFActionPerformed
-        //cadastroPF.setVisible(true);
-    }//GEN-LAST:event_btnCadastroPFActionPerformed
+    private void btnConsultaPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaPFActionPerformed
+        consultaPF.setVisible(true);
+    }//GEN-LAST:event_btnConsultaPFActionPerformed
 
-    private void btnCadastroPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroPJActionPerformed
-        //cadastroPJ.setVisible(true);
-    }//GEN-LAST:event_btnCadastroPJActionPerformed
+    private void btnConsultaPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaPJActionPerformed
+        consultaPJ.setVisible(true);
+    }//GEN-LAST:event_btnConsultaPJActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,14 +197,14 @@ public class OpcaoConsultaPFOuPJ extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new OpcaoConsultaPFOuPJ().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCadastroPF;
-    private javax.swing.JButton btnCadastroPJ;
+    private javax.swing.JButton btnConsultaPF;
+    private javax.swing.JButton btnConsultaPJ;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

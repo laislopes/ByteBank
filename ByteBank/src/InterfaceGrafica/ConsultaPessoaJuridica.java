@@ -6,18 +6,19 @@
 package InterfaceGrafica;
 
 import Codigo.PessoaFisicaTableModel;
+import Codigo.PessoaJuridicaTableModel;
 import java.util.ArrayList;
 
 /**
  *
  * @author danie
  */
-public class ConsultaCliente extends javax.swing.JFrame {
+public class ConsultaPessoaJuridica extends javax.swing.JFrame {
 
     
     private ArrayList<Integer> idClientePJ = new ArrayList<> ();
-    private PessoaFisicaTableModel tableModel;
-    public ConsultaCliente(PessoaFisicaTableModel tableModel) {
+    private PessoaJuridicaTableModel tableModel;
+    public ConsultaPessoaJuridica(PessoaJuridicaTableModel tableModel) {
         initComponents();
         this.tableModel = tableModel;
         jTClientes.setModel(tableModel);
@@ -71,9 +72,7 @@ public class ConsultaCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    public PessoaFisicaTableModel getTableModel(){
-        return tableModel;
-    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -88,20 +87,23 @@ public class ConsultaCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ConsultaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaPessoaJuridica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ConsultaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaPessoaJuridica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ConsultaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaPessoaJuridica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ConsultaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultaPessoaJuridica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new ConsultaCliente().setVisible(true);
+                
             }
         });
     }

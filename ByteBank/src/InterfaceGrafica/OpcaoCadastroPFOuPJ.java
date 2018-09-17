@@ -11,10 +11,12 @@ package InterfaceGrafica;
  */
 public class OpcaoCadastroPFOuPJ extends javax.swing.JFrame {
 
-    //CadastroPessoaFisica cadastroPF = new CadastroPessoaFisica();
-    //CadastroPessoaJuridica cadastroPJ = new CadastroPessoaJuridica();
-    public OpcaoCadastroPFOuPJ() {
+    CadastroPessoaFisica cadastroPF;
+    CadastroPessoaJuridica cadastroPJ;
+    public OpcaoCadastroPFOuPJ(CadastroPessoaFisica cadastroPF,CadastroPessoaJuridica cadastroPJ ) {
         initComponents();
+        this.cadastroPF = cadastroPF;
+        this.cadastroPJ = cadastroPJ;
     }
 
     /**
@@ -30,6 +32,8 @@ public class OpcaoCadastroPFOuPJ extends javax.swing.JFrame {
         btnCadastroPJ = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+
+        setResizable(false);
 
         btnCadastroPF.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCadastroPF.setText("Cadastrar Pessoa Física");
@@ -93,11 +97,11 @@ public class OpcaoCadastroPFOuPJ extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastroPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroPFActionPerformed
-        //cadastroPF.setVisible(true);
+        cadastroPF.setVisible(true);
     }//GEN-LAST:event_btnCadastroPFActionPerformed
 
     private void btnCadastroPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroPJActionPerformed
-        //cadastroPJ.setVisible(true);
+        cadastroPJ.setVisible(true);
     }//GEN-LAST:event_btnCadastroPJActionPerformed
 
     /**
@@ -161,7 +165,7 @@ public class OpcaoCadastroPFOuPJ extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new OpcaoCadastroPFOuPJ().setVisible(true);
+                
             }
         });
     }
