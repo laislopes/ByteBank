@@ -10,13 +10,13 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
 
    
     
-    PessoaFisicaTableModel tableModel = new PessoaFisicaTableModel();
+    //PessoaFisicaTableModel tableModel = new PessoaFisicaTableModel();
     private ArrayList<Integer> idClientePJ = new ArrayList<> ();
-    
-    public CadastroPessoaFisica() {
+    private PessoaFisicaTableModel tableModel;
+    public CadastroPessoaFisica(PessoaFisicaTableModel tableModel) {
         initComponents();
-        jTClientes.setModel(tableModel);
-        
+        //jTClientes.setModel(tableModel);
+        this.tableModel = tableModel;
     }
     
     
@@ -395,7 +395,7 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
         PF.setCelular(txtCelular.getText());
         PF.setIDCliente();
         
-        tableModel.addRow(PF);
+           tableModel.addRow(PF);
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void txtCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCEPActionPerformed
@@ -445,7 +445,7 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroPessoaFisica().setVisible(true);
+                //new CadastroPessoaFisica().setVisible(true);
             }
         });
     }

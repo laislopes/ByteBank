@@ -255,10 +255,7 @@
                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="txtCelular" min="-2" pref="216" max="-2" attributes="0"/>
-                                      <EmptySpace min="149" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="txtCelular" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
                               <Component id="btnSalvar" min="-2" pref="87" max="-2" attributes="0"/>

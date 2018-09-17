@@ -14,12 +14,14 @@ import java.util.ArrayList;
  */
 public class ConsultaCliente extends javax.swing.JFrame {
 
-    PessoaFisicaTableModel tableModel = new PessoaFisicaTableModel();
-    private ArrayList<Integer> idClientePJ = new ArrayList<> ();
     
-    public ConsultaCliente() {
+    private ArrayList<Integer> idClientePJ = new ArrayList<> ();
+    private PessoaFisicaTableModel tableModel;
+    public ConsultaCliente(PessoaFisicaTableModel tableModel) {
         initComponents();
+        this.tableModel = tableModel;
         jTClientes.setModel(tableModel);
+        
     }
 
     /**
@@ -32,11 +34,11 @@ public class ConsultaCliente extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTClientes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -47,7 +49,7 @@ public class ConsultaCliente extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTClientes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,10 +70,10 @@ public class ConsultaCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    public PessoaFisicaTableModel getTableModel(){
+        return tableModel;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -99,13 +101,13 @@ public class ConsultaCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ConsultaCliente().setVisible(true);
+                //new ConsultaCliente().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTClientes;
     // End of variables declaration//GEN-END:variables
 }

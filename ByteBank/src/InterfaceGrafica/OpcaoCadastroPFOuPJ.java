@@ -9,11 +9,11 @@ package InterfaceGrafica;
  *
  * @author danie
  */
-public class TelaPrincipal extends javax.swing.JFrame {
+public class OpcaoCadastroPFOuPJ extends javax.swing.JFrame {
 
-    CadastroPessoaFisica cadastroPF = new CadastroPessoaFisica();
-    CadastroPessoaJuridica cadastroPJ = new CadastroPessoaJuridica();
-    public TelaPrincipal() {
+    //CadastroPessoaFisica cadastroPF = new CadastroPessoaFisica();
+    //CadastroPessoaJuridica cadastroPJ = new CadastroPessoaJuridica();
+    public OpcaoCadastroPFOuPJ() {
         initComponents();
     }
 
@@ -93,11 +93,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastroPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroPFActionPerformed
-        cadastroPF.setVisible(true);
+        //cadastroPF.setVisible(true);
     }//GEN-LAST:event_btnCadastroPFActionPerformed
 
     private void btnCadastroPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroPJActionPerformed
-        cadastroPJ.setVisible(true);
+        //cadastroPJ.setVisible(true);
     }//GEN-LAST:event_btnCadastroPJActionPerformed
 
     /**
@@ -117,14 +117,42 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OpcaoCadastroPFOuPJ.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OpcaoCadastroPFOuPJ.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OpcaoCadastroPFOuPJ.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(OpcaoCadastroPFOuPJ.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -133,7 +161,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipal().setVisible(true);
+                new OpcaoCadastroPFOuPJ().setVisible(true);
             }
         });
     }
