@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 public class LoginBytebank extends javax.swing.JFrame {
      
+    private static LoginBytebank login =  new LoginBytebank();
     
    
     public LoginBytebank() {
@@ -109,12 +110,13 @@ public class LoginBytebank extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null, "Acesso Negado");}
     }//GEN-LAST:event_btnEntrarActionPerformed
     
-        
+      
     private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
         if(evt.getKeyCode()== KeyEvent.VK_ENTER){
           if(txtLogin.getText().equals("admin") && txtSenha.getText().equals("admin")){
                        
             new MenuPrincipal().setVisible(true);
+            login.setVisible(false);
           }
         
            else{
@@ -159,7 +161,8 @@ public class LoginBytebank extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginBytebank().setVisible(true);
+                
+                login.setVisible(true);
             }
         });
     }
