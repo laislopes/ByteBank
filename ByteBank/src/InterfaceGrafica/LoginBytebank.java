@@ -2,6 +2,7 @@
 package InterfaceGrafica;
 
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 public class LoginBytebank extends javax.swing.JFrame {
@@ -38,6 +39,12 @@ public class LoginBytebank extends javax.swing.JFrame {
         jLlogin.setText("Login:");
 
         jLSenha.setText("Senha:");
+
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
+            }
+        });
 
         btnEntrar.setText("Entrar");
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -97,13 +104,29 @@ public class LoginBytebank extends javax.swing.JFrame {
            
             new MenuPrincipal().setVisible(true);
         }
-        else{
+       else{
+            
+           JOptionPane.showMessageDialog(null, "Acesso Negado");}
+    }//GEN-LAST:event_btnEntrarActionPerformed
+    
+        
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+          if(txtLogin.getText().equals("admin") && txtSenha.getText().equals("admin")){
+                       
+            new MenuPrincipal().setVisible(true);
+          }
+        
+           else{
             
             JOptionPane.showMessageDialog(null, "Acesso Negado");
+            }  
+          }
+        
+           
+    }//GEN-LAST:event_txtSenhaKeyPressed
             
-    }//GEN-LAST:event_btnEntrarActionPerformed
-            
-    }
+    
 
     
     public static void main(String args[]) {
