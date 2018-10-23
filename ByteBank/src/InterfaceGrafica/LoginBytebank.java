@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 public class LoginBytebank extends javax.swing.JFrame {
      
     private static LoginBytebank login =  new LoginBytebank();
-    
+     private MenuPrincipal menu = new MenuPrincipal();
    
     public LoginBytebank() {
         initComponents();
@@ -115,7 +115,8 @@ public class LoginBytebank extends javax.swing.JFrame {
         if(evt.getKeyCode()== KeyEvent.VK_ENTER){
           if(txtLogin.getText().equals("admin") && txtSenha.getText().equals("admin")){
                        
-            new MenuPrincipal().setVisible(true);
+            menu.setVisible(true);
+            menu.setExtendedState(MAXIMIZED_BOTH);
             login.setVisible(false);
           }
         
